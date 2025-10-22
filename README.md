@@ -1,1 +1,1 @@
-# cip
+# Image processing in C
