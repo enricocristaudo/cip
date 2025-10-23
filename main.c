@@ -9,5 +9,5 @@ int main(int argc, char *argv[]) {
 	Image *image = loadImage(filename);
 	Image *up = upscale(image, 2);
 	saveImage(up, argv[2]);
-	printf("%s\n", "Hello world!");
+//	printf("%s\n", "Hello world!");
 }
