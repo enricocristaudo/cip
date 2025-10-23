@@ -31,6 +31,8 @@ void saveImage(Image *image, const char *pathToImage) {
 	FILE *output = fopen(pathToImage, "wb");
 	size_t s = sizeof(unsigned char);	
 
+	printf("%d\n", image->width);
+
 	fwrite(image->header, s, 54, output);
 	if(image->bitDepth <= 8)
 		fwrite(image->colorTable, s, 1024, output);
@@ -44,16 +46,6 @@ Image *copyImage(Image *from) {
 	Image *copied = malloc(sizeof(Image));
 	memcpy(copied, from, sizeof(Image));
 	return copied;
-}
-
-Image *negative(Image *from) {
-	Image *result = copyImage(from);
-	for(int i=0; i<from->height; i++) {
-		for(int j=0; j<from->width; j++) {
-			result->data[i][j] = 255 - from->data[i][j];
-		}
-	}
-	return result;
 }
 
 void printBuffer(Image *image) {

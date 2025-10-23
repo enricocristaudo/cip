@@ -16,8 +16,6 @@ Image *loadImage(const char* pathToImage);
 void saveImage(Image *image, const char *pathToImage);
 void printBuffer(Image *image);
 void freeImage(Image *image);
-
 Image *copyImage(Image *from);
-Image *negative(Image *from);
 
 #endif
